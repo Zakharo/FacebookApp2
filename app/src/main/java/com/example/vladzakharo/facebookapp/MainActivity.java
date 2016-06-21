@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void fbLogin(){
         loginButton.setReadPermissions("public_profile", "user_location", "user_posts", "user_photos");
-        //loginButton.setPublishPermissions("publish_actions");
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {

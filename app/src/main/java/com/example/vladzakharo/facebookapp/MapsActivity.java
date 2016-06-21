@@ -1,5 +1,7 @@
 package com.example.vladzakharo.facebookapp;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -17,15 +19,9 @@ import java.util.HashMap;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    LatLng marker;
-    Double latitude;
-    String lat;
-    Double longitude;
-    String longit;
-    String message;
-    ArrayList<String> latitudeList;
-    ArrayList<String> longitudeList;
-    ArrayList<String> messageList;
+
+    DBHelper dbHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +32,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        dbHelper = new DBHelper(this);
 
     }
 
@@ -53,33 +50,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        //Add a marker in Sydney and move the camera
-        /*LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
+        mMap.addMarker((new MarkerOptions().position(new LatLng(57.32, 87.22)).title("first")));
+        mMap.addMarker((new MarkerOptions().position(new LatLng(57.32, 87.23)).title("second")));
 
-        latitudeList = new ArrayList<>();
-        longitudeList = new ArrayList<>();
-        messageList = new ArrayList<>();
 
-        if (getIntent().getStringExtra("message") != null ) {
-            latitude = getIntent().getExtras().getDouble("latitude");
-            longitude = getIntent().getExtras().getDouble("longitude");
-            message = getIntent().getStringExtra("message");
-            lat = String.valueOf(latitude);
-            longit = String.valueOf(longitude);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor c = db.query("mytable", null, null, null, null, null, null);
+        if (c.moveToFirst()){
+            int messageIndex = c.getColumnIndex("message");
+            int latitudeIndex = c.getColumnIndex("latitude");
+            int longitudeIndex = c.getColumnIndex("longitude");
 
-            latitudeList.add(lat);
-            longitudeList.add(longit);
-            messageList.add(message);
+            do{
+                mMap.addMarker(new MarkerOptions().position(new LatLng(c.getDouble(latitudeIndex), c.getDouble(longitudeIndex)))
+                .title(c.getString(messageIndex)));
+            } while (c.moveToNext());
         }
-
-        for (int i = 0; i < messageList.size(); i++){
-            latitude = Double.parseDouble(latitudeList.get(i));
-            longitude = Double.parseDouble(longitudeList.get(i));
-            mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude))
-                .title(message));
-        }
+        c.close();
+        dbHelper.close();
     }
 
 }
