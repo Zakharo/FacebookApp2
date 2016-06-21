@@ -191,7 +191,7 @@ public class CentralActivity extends AppCompatActivity implements GoogleApiClien
                 mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
                 mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
             }else{
-                Toast.makeText(getApplicationContext(), "Empty", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Please, enable GPS", Toast.LENGTH_SHORT).show();
             }
         }
 

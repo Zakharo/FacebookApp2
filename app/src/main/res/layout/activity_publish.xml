@@ -116,8 +116,32 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/btnSubmit"
-        android:layout_below="@+id/etLink"
-        android:layout_alignEnd="@+id/etLink"
-        android:layout_marginTop="45dp" />
+        android:layout_below="@+id/tvPlace"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place"
+        android:id="@+id/tvPlace"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/tvLink"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPlace"
+        android:layout_alignBottom="@+id/tvPlace"
+        android:layout_alignStart="@+id/etLink"
+        android:layout_alignEnd="@+id/etLink" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get place"
+        android:id="@+id/btnPlace"
+        android:layout_alignTop="@+id/btnSubmit"
+        android:layout_toStartOf="@+id/btnSubmit" />
 
 </RelativeLayout>

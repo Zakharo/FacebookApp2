@@ -11,7 +11,7 @@ import android.view.View;
 
 /**
  * Created by Vlad Zakharo on 30.04.2016.
- * Добавление полоски между элементами списка
+ * ПРОСТО ДОБАВЛЕНИЕ ПОЛОСКИ МЕЖДУ ЭЛЕМЕНТАМ СПИСКА!!!!
  */
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
