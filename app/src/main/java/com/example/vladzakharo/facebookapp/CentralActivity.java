@@ -73,7 +73,7 @@ public class CentralActivity extends AppCompatActivity implements GoogleApiClien
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_central);
 
-        //Create an instance of GoogleAPIClient.
+        // Create an instance of GoogleAPIClient.
         if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
@@ -187,10 +187,7 @@ public class CentralActivity extends AppCompatActivity implements GoogleApiClien
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-            if (mLastLocation != null){
-                mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
-                mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
-            }else{
+            if (mLastLocation == null){
                 Toast.makeText(getApplicationContext(), "Please, enable GPS", Toast.LENGTH_SHORT).show();
             }
         }

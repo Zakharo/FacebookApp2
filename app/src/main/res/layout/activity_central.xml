@@ -44,28 +44,12 @@
         android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/latitude_text"
-        android:layout_below="@+id/btnPublish"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/longitude_text"
-        android:layout_below="@+id/latitude_text"
-        android:layout_alignParentStart="true" />
-
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recyclerView"
-        android:layout_below="@+id/longitude_text"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnPublish" />
 
 
 </RelativeLayout>

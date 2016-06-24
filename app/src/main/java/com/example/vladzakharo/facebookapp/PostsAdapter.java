@@ -21,6 +21,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
     private List<Post> postsList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+
         public TextView tvMessage;
         public TextView tvName;
         public TextView tvCaption;

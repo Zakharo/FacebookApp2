@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/btnSubmit"
-        android:layout_below="@+id/tvPlace"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
     <TextView
@@ -143,5 +143,13 @@
         android:id="@+id/btnPlace"
         android:layout_alignTop="@+id/btnSubmit"
         android:layout_toStartOf="@+id/btnSubmit" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photo"
+        android:id="@+id/btnPhoto"
+        android:layout_alignTop="@+id/btnPlace"
+        android:layout_toStartOf="@+id/btnPlace" />
 
 </RelativeLayout>
