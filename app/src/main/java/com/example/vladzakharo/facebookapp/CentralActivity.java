@@ -64,8 +64,6 @@ public class CentralActivity extends AppCompatActivity implements GoogleApiClien
     public String Id;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
-    protected TextView mLatitudeText;
-    protected TextView mLongitudeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,8 +80,6 @@ public class CentralActivity extends AppCompatActivity implements GoogleApiClien
                     .build();
         }
 
-        mLatitudeText = (TextView) findViewById((R.id.latitude_text));
-        mLongitudeText = (TextView) findViewById((R.id.longitude_text));
         btnPublish = (Button) findViewById(R.id.btnPublish);
         btnUpdate = (Button) findViewById(R.id.btnUpdate);
         btnMap = (Button) findViewById(R.id.btnMap);
@@ -187,14 +183,7 @@ public class CentralActivity extends AppCompatActivity implements GoogleApiClien
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-<<<<<<< HEAD
             if (mLastLocation == null){
-=======
-            if (mLastLocation != null){
-                mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
-                mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
-            }else{
->>>>>>> abaf2eb7d1da7082f4e2cd79ae7d690dbbf3e0b5
                 Toast.makeText(getApplicationContext(), "Please, enable GPS", Toast.LENGTH_SHORT).show();
             }
         }

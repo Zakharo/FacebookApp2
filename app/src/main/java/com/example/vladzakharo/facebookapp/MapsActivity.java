@@ -50,13 +50,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-<<<<<<< HEAD
-=======
-        mMap.addMarker((new MarkerOptions().position(new LatLng(57.32, 87.22)).title("first")));
-        mMap.addMarker((new MarkerOptions().position(new LatLng(57.32, 87.23)).title("second")));
-
-
->>>>>>> abaf2eb7d1da7082f4e2cd79ae7d690dbbf3e0b5
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor c = db.query("mytable", null, null, null, null, null, null);
         if (c.moveToFirst()){
