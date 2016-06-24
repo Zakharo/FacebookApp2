@@ -14,7 +14,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+<<<<<<< HEAD
         // Создаем таблицу с полями
+=======
+        // создаем таблицу с полями
+>>>>>>> abaf2eb7d1da7082f4e2cd79ae7d690dbbf3e0b5
         db.execSQL("create table mytable ("
                 + "message text,"
                 + "latitude real,"

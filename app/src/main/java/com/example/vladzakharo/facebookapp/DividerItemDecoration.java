@@ -11,7 +11,11 @@ import android.view.View;
 
 /**
  * Created by Vlad Zakharo on 30.04.2016.
+<<<<<<< HEAD
  * ПРОСТО ДОБАВЛЕНИЕ ПОЛОСКИ МЕЖДУ ЭЛЕМЕНТАМ СПИСКА
+=======
+ * ПРОСТО ДОБАВЛЕНИЕ ПОЛОСКИ МЕЖДУ ЭЛЕМЕНТАМ СПИСКА!!!!
+>>>>>>> abaf2eb7d1da7082f4e2cd79ae7d690dbbf3e0b5
  */
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 

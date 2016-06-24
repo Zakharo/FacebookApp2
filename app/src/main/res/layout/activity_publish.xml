@@ -116,7 +116,11 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/btnSubmit"
+<<<<<<< HEAD
         android:layout_alignParentBottom="true"
+=======
+        android:layout_below="@+id/tvPlace"
+>>>>>>> abaf2eb7d1da7082f4e2cd79ae7d690dbbf3e0b5
         android:layout_alignParentEnd="true" />
 
     <TextView
@@ -143,6 +147,7 @@
         android:id="@+id/btnPlace"
         android:layout_alignTop="@+id/btnSubmit"
         android:layout_toStartOf="@+id/btnSubmit" />
+<<<<<<< HEAD
 
     <Button
         android:layout_width="wrap_content"
@@ -151,5 +156,7 @@
         android:id="@+id/btnPhoto"
         android:layout_alignTop="@+id/btnPlace"
         android:layout_toStartOf="@+id/btnPlace" />
+=======
+>>>>>>> abaf2eb7d1da7082f4e2cd79ae7d690dbbf3e0b5
 
 </RelativeLayout>
