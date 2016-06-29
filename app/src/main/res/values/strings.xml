@@ -2,4 +2,12 @@
     <string name="app_name">FacebookApp</string>
     <string name="facebook_app_id">563092727187781</string>
     <string name="title_activity_maps">Map</string>
+    <string name="ButtonPublish">Publish</string>
+    <string name="button_map">Map</string>
+    <string name="button_update">Update</string>
+    <string name="login_failed">Login attempt failed.</string>
+    <string name="login_canceled">Login attempt canceled.</string>
+    <string name="gps">Please, enable GPS</string>
+    <string name="posted">Posted</string>
+    <string name="exit">Press again to exit</string>
 </resources>

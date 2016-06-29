@@ -1,27 +1,18 @@
 package com.example.vladzakharo.facebookapp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     LoginButton loginButton;
@@ -44,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 fbLogin();
             }
         });
+
     }
 
     private void fbLogin(){
@@ -58,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancel() {
-                textView.setText("Login attempt canceled.");
+                textView.setText(R.string.login_canceled);
             }
 
             @Override
             public void onError(FacebookException error) {
-                textView.setText("Login attempt failed.");
+                textView.setText(R.string.login_failed);
             }
         });
     }
@@ -72,4 +64,5 @@ public class MainActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 }

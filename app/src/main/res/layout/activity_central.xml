@@ -12,7 +12,7 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Publish"
+        android:text="@string/ButtonPublish"
         android:id="@+id/btnPublish"
         android:layout_alignTop="@+id/btnUpdate"
         android:layout_alignParentStart="true" />
@@ -20,7 +20,7 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Update"
+        android:text="@string/button_update"
         android:id="@+id/btnUpdate"
         android:layout_alignParentTop="true"
         android:layout_alignEnd="@+id/linearLayout" />
@@ -39,7 +39,7 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="MAP"
+        android:text="@string/button_map"
         android:id="@+id/btnMap"
         android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true" />

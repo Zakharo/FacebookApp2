@@ -31,9 +31,7 @@ import com.google.android.gms.location.LocationServices;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
 public class PublishActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
@@ -212,7 +210,7 @@ public class PublishActivity extends AppCompatActivity implements GoogleApiClien
                         new GraphRequest.Callback() {
                             @Override
                             public void onCompleted(GraphResponse response) {
-                                Toast.makeText(getApplicationContext(), "Отправлено", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), R.string.posted, Toast.LENGTH_SHORT).show();
                                 if (ContextCompat.checkSelfPermission(PublishActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                                         || ContextCompat.checkSelfPermission(PublishActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                                     mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
@@ -247,7 +245,7 @@ public class PublishActivity extends AppCompatActivity implements GoogleApiClien
                         new GraphRequest.Callback() {
                             @Override
                             public void onCompleted(GraphResponse response) {
-                                Toast.makeText(getApplicationContext(), "Отправлено", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), R.string.posted, Toast.LENGTH_SHORT).show();
                                 if (ContextCompat.checkSelfPermission(PublishActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                                         || ContextCompat.checkSelfPermission(PublishActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                                     mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
@@ -292,6 +290,9 @@ public class PublishActivity extends AppCompatActivity implements GoogleApiClien
             if (mLastLocation != null) {
                 latitude = String.valueOf(mLastLocation.getLatitude());
                 longitude = String.valueOf(mLastLocation.getLongitude());
+            }
+            else{
+                btnPlace.setEnabled(false);
             }
         }
     }

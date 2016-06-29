@@ -1,32 +1,20 @@
 package com.example.vladzakharo.facebookapp;
 
 import android.Manifest;
-import android.app.AlertDialog;
-import android.content.ComponentName;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.net.Uri;
-import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
@@ -34,14 +22,10 @@ import com.facebook.HttpMethod;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
-import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationServices;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -184,7 +168,7 @@ public class CentralActivity extends AppCompatActivity implements GoogleApiClien
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             if (mLastLocation == null){
-                Toast.makeText(getApplicationContext(), "Please, enable GPS", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.gps, Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -199,4 +183,5 @@ public class CentralActivity extends AppCompatActivity implements GoogleApiClien
     public void onConnectionSuspended(int i) {
 
     }
+
 }
